@@ -2,20 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Keg(props){
-  let sellPint = () => {
-
-    (props.pints > 0) ? pints -1 : pints = 0;
-  }
+  let pintsAvailable = props.pints > 0 ? props.pints : "Out of Stock"
   return (
     <React.Fragment>
       <div onClick = {() => props.whenKegClicked(props.id)}>
         <h3>{props.brand} - {props.name}</h3>
         <p><em>$ {props.price}</em></p>
         <p>Alcohol Content: {props.alcohol}% </p>
-        <p>Pints left in keg: {props.pints}</p>
+        <p>Pints left in keg: {pintsAvailable}</p>
         <hr/>
       </div>
-      <button onClick={sellPint}>Sell Pint</button>
+      <button onClick = {() => props.handleDecrementPint(props.id)}>Sell Pint</button>
     </React.Fragment>
   );
 }
@@ -27,7 +24,8 @@ Keg.propTypes = {
   alcohol: PropTypes.string,
   pints: PropTypes.number,
   id: PropTypes.string,
-  whenKegClicked: PropTypes.func
+  whenKegClicked: PropTypes.func,
+  handleDecrementPint: PropTypes.func
 };
 
 
