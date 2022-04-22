@@ -1,10 +1,13 @@
-import './App.css';
+import React from "react";
+import Header from "./Header";
+import KegControl from "./KegControl";
 
-function App() {
-  return (
-    <div className="App">
-
-    </div>
+function App(){
+  return ( 
+    <React.Fragment>
+      <Header />
+      <KegControl />
+    </React.Fragment>
   );
 }
 
