@@ -24,7 +24,7 @@ and then `npm run start` to start a development server
 
 ## Component Diagram
 
-
+ <img src="./src/img/Component-Diagram.png">
 
 ## Known Bugs
 
